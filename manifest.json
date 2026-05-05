@@ -1,0 +1,35 @@
+{
+  "manifest_version": 2,
+  "name": "Zen Tab Organizer",
+  "version": "0.1.0",
+  "description": "Organize Zen Browser tabs into spaces using regex patterns",
+  "applications": {
+    "gecko": {
+      "id": "zen-tab-organizer@example.com",
+      "strict_min_version": "60.0"
+    }
+  },
+  "permissions": [
+    "tabs",
+    "tabGroups",
+    "storage",
+    "<all_urls>"
+  ],
+  "experiment_apis": {
+    "experiments_zen_spaces": {
+      "schema": "experiments/zenSpaces.json",
+      "parent": {
+        "scopes": ["addon_parent"],
+        "paths": [["experiments", "zen_spaces"]],
+        "script": "experiments/zenSpaces.js"
+      }
+    }
+  },
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_title": "Zen Tab Organizer"
+  }
+}

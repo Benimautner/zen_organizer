@@ -1,0 +1,78 @@
+{
+  "namespace": "zenSpaces",
+  "description": "Bridge to Zen workspace management internals",
+  "permissions": ["tabs"],
+  "types": [
+    {
+      "id": "ZenSpaceInfo",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "active": {
+          "type": "boolean",
+          "optional": true
+        }
+      }
+    }
+  ],
+  "functions": [
+    {
+      "name": "listSpaces",
+      "type": "function",
+      "async": true,
+      "parameters": [],
+      "returns": {
+        "type": "array",
+        "items": {
+          "$ref": "ZenSpaceInfo"
+        }
+      }
+    },
+    {
+      "name": "getActiveSpace",
+      "type": "function",
+      "async": true,
+      "parameters": [],
+      "returns": {
+        "$ref": "ZenSpaceInfo"
+      }
+    },
+    {
+      "name": "moveTabToWorkspace",
+      "type": "function",
+      "async": true,
+      "parameters": [
+        {
+          "name": "tabId",
+          "type": "integer"
+        },
+        {
+          "name": "workspaceId",
+          "type": "string"
+        }
+      ],
+      "returns": {
+        "type": "boolean"
+      }
+    },
+    {
+      "name": "changeWorkspace",
+      "type": "function",
+      "async": true,
+      "parameters": [
+        {
+          "name": "workspaceId",
+          "type": "string"
+        }
+      ],
+      "returns": {
+        "type": "boolean"
+      }
+    }
+  ]
+}
