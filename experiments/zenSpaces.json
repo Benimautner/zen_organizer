@@ -15,8 +15,6 @@
       }
     ],
     "functions": [
-      { "name": "listSpaces", "type": "function", "async": true, "parameters": [], "returns": { "type": "array", "items": { "$ref": "ZenSpaceInfo" } } },
-      { "name": "getActiveSpace", "type": "function", "async": true, "parameters": [], "returns": { "$ref": "ZenSpaceInfo" } },
       {
         "name": "moveTabToWorkspace",
         "type": "function",
@@ -40,9 +38,7 @@
           { "name": "workspaceId", "type": "string" }
         ],
         "returns": { "type": "boolean" }
-      },
-      { "name": "changeWorkspace", "type": "function", "async": true, "parameters": [ { "name": "workspaceId", "type": "string" } ], "returns": { "type": "boolean" } },
-      { "name": "testWindowAccess", "type": "function", "async": true, "parameters": [], "returns": { "type": "object" } }
+      }
     ]
   }
 ]
